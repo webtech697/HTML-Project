@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preloader Spinner</title>
+
+  <!-- Tailwind CSS (use CDN for quick testing) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional: Custom Tailwind config (animation duration override) -->
+  <style>
+    .spin-slow {
+      animation: spin 2s linear infinite;
+    }
+  </style>
+
+  <!-- jQuery (for preloader fade out logic) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="m-0 p-0">
+
+  <!-- Preloader -->
+  <div id="loading" class="fixed top-0 left-0 w-full h-full bg-[#f5f5f9] z-[99999999]">
+    <div id="loading-center" class="absolute top-2/4 left-2/4 -mt-[50px] -ml-[50px] h-[100px] w-[100px] lg:h-[90px] lg:w-[90px] md:h-[90px] md:w-[90px] sm:h-[80px] sm:w-[80px]">
+      <span class="w-full h-full inline-block relative box-border rounded-full border-2 border-solid border-transparent border-t-[#3eb1ff] spin-slow
+        after:content-[''] after:absolute after:inset-0 after:box-border after:rounded-full after:border-[50px] after:border-solid after:border-transparent after:border-t-[#3eb1ff3b] lg:after:border-[45px] md:after:border-[45px] sm:after:border-[40px]">
+      </span>
+    </div>
+  </div>
+
+  <!-- Preloader Script -->
+  <script>
+    $(window).on('load', function() {
+      "use strict";
+      var preloader = $('#loading'),
+          loader = preloader.find('#loading-center');
+      loader.fadeOut();
+      preloader.delay(400).fadeOut('slow');
+    });
+  </script>
+
+</body>
+</html>
