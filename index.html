@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- Title -->
+		<title>Martex-demo3</title>
+		<!-- Favicon -->
+		<link rel="icon" href="images/favicon.png" />
+		<!-- stylesheet -->
+	    <link href="css/style.css" rel="stylesheet">
+		<!-- TelwindCSS -->
+		<script src="js/tailwindcss.js"></script>
+	     <!--slider -->
+		<link href="css/owl.carousel.min.css" rel="stylesheet">
+		<link href="css/owl.theme.default.min.css" rel="stylesheet">
+		<!-- Jquery -->
+		<script src="js/jquery.min.js"></script>
+		<!-- Color-theme -->
+		<link href="css/colors/pink-theme.css" rel="alternate stylesheet" title="pink-theme">
+		<!-- icons -->
+		<link href="css/flaticon.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- PRELOADER SPINNER ============================================= -->
+		<div id="loading" class="loading--theme  h-full w-full fixed z-[99999999] mt--0 top-0 bg-[#f5f5f9]">
+			<div id="round-fade-in loading-center" class="absolute h-[100px] w-[100px] mt-[-50px] ml-[-50px] animate-[loading-center-absolute_1s_infinite] left-2/4 top-2/4 lg:h-[90px] lg:w-[90px] lg:mt-[-45px] lg:ml-[-45px] md:h-[90px] md:w-[90px] md:mt-[-45px] md:ml-[-45px]"><span class="loader w-[100px] h-[100px] inline-block relative box-border animate-[rotation_1s_linear_infinite] rounded-[50%] border-2 border-solid border-[transparent_#3eb1ff] after:content-[''] after:box-border after:absolute after:-translate-x-2/4 after:-translate-y-2/4 after:rounded-[50%] after:border-[50px] after:border-solid after:border-[transparent_#3eb1ff3b] after:left-2/4 after:top-2/4 lg:w-[90px] lg:h-[90px] lg:after:border-[45px] lg:after:border-solid md:w-[90px] md:h-[90px] md:after:border-[45px] md:after:border-solid sm:w-[80px] sm:h-[80px] sm:after:border-[40px] sm:after:border-solid"></span></div>
+		</div>
+		<!-- STYLE SWITCHER ============================================= -->
+		<div id="stlChanger" class=" fixed z-[9999] text-[15px] overflow-hidden right-[-230px] cursor-pointer transition-all duration-[400ms] ease-[ease-in-out] rounded-none top-[100px] xsm:hidden">
+		  	<div class="blockChanger bgChanger min-w-[280px] min-h-[280px] w-[230px]">
+		    	<a href="#" class="flex items-center chBut icon-xs w-[50px] h-[50px] absolute z-[1000000] text-center transition-all duration-300 ease-[ease-in-out] shadow-[0_0_2px_rgba(50,50,50,0.4)] pl-[2px] pr-0 py-0 rounded-[4px_0px_0px_4px] ![border-left:none] [border:1px_solid_#ef2853] top-[30px] left-0 bg-[#ef2853]"><img src="images/color-theme.png" class="m-auto"> <span class="flaticon-control-panel before:text-white before:!text-[2.15rem]"></span></a>
+
+		    	<div class="chBody pb-7 white-color w-[230px] relative border h-[425px] overflow-scroll overflow-x-hidden ml-[50px] rounded-[4px_0px_0px_4px] border-solid border-[#2b2e37] bg-[#2b2e37] [direction:rtl]">
+		        	<div class="stBlock text-center" style="margin: 30px 20px 20px 26px;">
+			           <div class="stBgs">
+			              <p class="switch text-[18px] font-semibold tracking-[0] mb-[20px] font-Jakarta w-full text-white rounded px-[1.4rem] py-[0.4rem] border-2 border-solid border-white !leading-[1.6666]">Dark Mode</p>
+			              <p class="text-left text-white text-[1.125rem] font-semibold tracking-[0] mb-[20px] font-Jakarta">Color Scheme</p>
+			              <a class=" no-underline w-[50px] h-[50px] float-left cursor-pointer opacity-100 mt-0 mb-[8px] mx-[5px] p-0 rounded-[8px]" href="javascript:chooseStyle('pink-theme', 60)"><img src="images/pink.jpg"
+			                 class=" w-[50px] h-[50px] rounded-[8px]" alt=""></a>
+			              <a class=" no-underline w-[50px] h-[50px] float-left cursor-pointer opacity-100 mt-0 mb-[8px] mx-[5px] p-0 rounded-[8px]" href="javascript:chooseStyle('purple-theme', 60)"><img src="images/purple.jpg"
+			                 class=" w-[50px] h-[50px] rounded-[8px]" alt=""></a>
+			              <a class=" no-underline w-[50px] h-[50px] float-left cursor-pointer opacity-100 mt-0 mb-[8px] mx-[5px] p-0 rounded-[8px]" href="javascript:chooseStyle('violet-theme', 60)"><img src="images/violet.jpg"
+			                 class=" w-[50px] h-[50px] rounded-[8px]" alt=""></a>
+			              <a class=" no-underline w-[50px] h-[50px] float-left cursor-pointer opacity-100 mt-0 mb-[8px] mx-[5px] p-0 rounded-[8px]" href="javascript:chooseStyle('skyblue-theme', 60)"><img src="images/skyblue.jpg"
+			                 class=" w-[50px] h-[50px] rounded-[8px]" alt=""></a>
+			              <a class=" no-underline w-[50px] h-[50px] float-left cursor-pointer opacity-100 mt-0 mb-[8px] mx-[5px] p-0 rounded-[8px]" href="javascript:chooseStyle('magenta-theme', 60)"><img src="images/magenta.jpg"
+			                 class=" w-[50px] h-[50px] rounded-[8px]" alt=""></a>
+			              <a class=" no-underline w-[50px] h-[50px] float-left cursor-pointer opacity-100 mt-0 mb-[8px] mx-[5px] p-0 rounded-[8px]" href="javascript:chooseStyle('crocus-theme', 60)"><img src="images/crocus.jpg"
+			                 class=" w-[50px] h-[50px] rounded-[8px]" alt=""></a>
+			              <a class=" no-underline w-[50px] h-[50px] float-left cursor-pointer opacity-100 mt-0 mb-[8px] mx-[5px] p-0 rounded-[8px]" href="javascript:chooseStyle('red-theme', 60)"><img src="images/red.jpg"
+			                 class=" w-[50px] h-[50px] rounded-[8px]" alt=""></a>
+			              <a class=" no-underline w-[50px] h-[50px] float-left cursor-pointer opacity-100 mt-0 mb-[8px] mx-[5px] p-0 rounded-[8px]" href="javascript:chooseStyle('green-theme', 60)"><img src="images/green.jpg"
+			                 class=" w-[50px] h-[50px] rounded-[8px]" alt=""></a>
+			           </div>
+		        	</div>
+			        <div class="stBlock text-center pt-[255px]">
+					  <div>
+					    <a class="btn rounded-[4px] btn--theme hover--theme w-full leading-none mt-[15px] !px-[1.2rem] !py-[0.65rem]" href="javascript:chooseStyle('none', 60)">Reset Color</a>
+					  </div>
+					</div>
+		     	</div>
+		  	</div>
+		</div>
+		<!-- END SWITCHER -->
+		<!-- Popup -------------------------------->
+		<div class="modal" id="modalpopup">
+		    <div class="modal-dialog modal-lg fadeInDown relative m-auto">
+		        <img src="images/main-popup.png" class="rounded">
+		    	<button type="button" class="close absolute" data-dismiss="modal"><span class="flex justify-center items-center">&times;</span></button>
+		     </div>
+		</div>
+		<!-- Popup-end ------------------------------->
+		<!-- Header Start --------------------------------------------------------->
+		<header id="main-header" class="py-7 lg:py-8 w-full transition-all duration-300 ease-in-out absolute">
+	        <div class="container">
+	            <div class="py-[2px] row header flex justify-between items-center">
+	                <div class="logo">
+	                    <a href="martex.html"><img src="images/logo-skyblue.png" class="logo-blue w-full max-w-[120px] sm:max-w-[163.39px]" alt="Logo Blue"></a>
+	                    <a href="martex.html"><img src="images/logo-white.png" class="logo-white w-full max-w-[120px] sm:max-w-[163.39px]" alt="Logo White"></a>
+	                </div>
+	                <div class="navbar">
+	                    <nav class="relative w-full">
+	                        <div class="flex justify-end items-center">
+	                            <!-- Mobile Menu Button -->
+								<div class="lg:hidden">
+								  <button id="mobile-menu-button" class="flex flex-col gap-1 p-1 text-black focus:outline-none">
+								    <img id="menu-icon" src="images/toggle.png" class="block w-[30px] h-[22px]">
+								    <img id="close-icon" src="images/crose.png" class="hidden w-[22px] h-[22px]">
+								  </button>
+								</div>
+	                            <!-- Desktop Menu -->
+	                            <ul class="hidden lg:flex items-center">
+	                                <li class="relative group nav-list">
+	                                    <a href="#" class="hover:text-gray-500 flex items-center gap-1 Dropdown-icon relative">About</a>
+	                                    <ul class="absolute p-3 left-0 mt-2 w-48 bg-white text-gray-900 rounded shadow-[0px_4px_10px_rgba(0,0,0,0.15)]
+	                                               transform scale-y-0 group-hover:scale-y-100 origin-top
+	                                               transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100
+	                                               invisible group-hover:visible z-10">
+	                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Why Martex?</a></li>
+	                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Integrations</a></li>
+	                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">How It Works</a></li>
+	                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Best Solutions</a></li>
+	                                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Testimonials</a></li>
+	                                    </ul>
+	                                </li>
+	                                <li class="nav-list"><a href="#" class="hover:text-gray-500">Features</a></li>
+	                                <!-- Mega Menu -->
+	                                <li class="group nav-list">
+	                                    <a href="#" class="hover:text-gray-500 flex items-center gap-1 Dropdown-icon relative">Pages</a>
+	                                    <div class="absolute right-0 mt-3 w-screen max-w-[860px] bg-white text-gray-900 rounded shadow-[0px_4px_10px_rgba(0,0,0,0.15)]
+	                                                transform scale-y-0 group-hover:scale-y-100 origin-top
+	                                                transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100
+	                                                invisible group-hover:visible z-20">
+	                                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 text-sm">
+	                                            <div>
+	                                                <ul>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Company</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">About Us</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Our Team</a></li>
+	                                                    <li><a href="#" class="flex gap-2 px-4 py-2 hover:bg-gray-100">Careers <span class="careers inline-block text-white text-xs p-2 max-w-[28px] h-[24px] rounded-full flex justify-center items-center">4</span></a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a></li>
+	                                                </ul>
+	                                            </div>
+	                                            <div>
+	                                                <ul>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Features</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Core Features</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Our Projects</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Project Details</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Download Page</a></li>
+	                                                </ul>
+	                                            </div>
+	                                            <div>
+	                                                <ul>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Support</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Pricing Page #1</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">FAQs</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Help Center</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">404 Page</a></li>
+	                                                </ul>
+	                                            </div>
+	                                            <div>
+	                                                <ul>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Account</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Blog Listing</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Single Blog Post</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Login</a></li>
+	                                                    <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Sign up</a></li>
+	                                                </ul>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </li>
+	                                <li class="nav-list"><a href="#" class="hover:text-gray-500">Pricing</a></li>
+	                                <li class="nav-list"><a href="#" class="hover:text-gray-500">FAQs</a></li>
+	                                <li class="nav-list sign-in"><a href="#" class="hover:text-gray-300">Sign in</a></li>
+	                                <li class="sign-up"><a href="#" class="text-white hover:text-gray-300 font-semibold">Sign up</a></li>
+	                            </ul>
+	                        </div>
+	                    </nav>
+	                </div>
+	            </div>
+	        </div>
+	    </header>
+	    <!-- Mobile-menu --------------------------------------------------------------->
+		<div id="mobile-menu" class="lg:hidden hidden bg-white shadow">
+		    <ul>
+		        <li class="border-b border-grey-500 hover:bg-gray-100">
+		            <button class="w-full text-left p-4 font-medium flex justify-between items-center toggle-submenu relative">
+		                About
+		                <span class="submenu-arrow ml-2">⌵</span>
+		            </button>
+		            <ul class="hidden submenu">
+		                <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Why Martex?</a></li>
+		                <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Integrations</a></li>
+		                <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">How It Works</a></li>
+		                <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Best Solutions</a></li>
+		                <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Testimonials</a></li>
+		            </ul>
+		        </li>
+		        <li class="border-b border-grey-500 hover:bg-gray-100"><a href="#" class="block p-4">Features</a></li>
+		        <li class="border-b border-grey-500 hover:bg-gray-100">
+		            <button class="w-full text-left p-4 font-medium flex justify-between items-center toggle-submenu relative">
+		                Pages
+		                <span class="submenu-arrow ml-2">⌵</span>
+		            </button>
+		            <ul class="hidden submenu">
+		                 <li>
+		                    <ul class="">
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Company</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">About Us</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Our Team</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Careers</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Contact Us</a></li>
+		                    </ul>
+		                </li>
+		                <li>
+		                    <ul class="">
+		                    	<li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Features</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Core Features</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Our Projects</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Project Details</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Download Page</a></li>
+		                    </ul>
+		                </li>
+		                <li>
+		                    <ul class="">
+		                    	<li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Support</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Pricing Page #1</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">FAQs</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Help Center</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">404 Page</a></li>
+		                    </ul>
+		                </li>
+		                <li>
+		                    <ul class="">
+		                    	<li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Account</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Blog Listing</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Single Blog Post</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Login</a></li>
+		                        <li><a href="#" class="block py-3 px-4 hover:bg-gray-100">Sign up</a></li>
+		                    </ul>
+		                </li>
+		            </ul>
+		        </li>
+		        <li class="border-b border-grey-500 hover:bg-gray-100"><a href="#" class="block p-4">Pricing</a></li>
+		        <li class="border-b border-grey-500 hover:bg-gray-100"><a href="#" class="block p-4">FAQs</a></li>
+		        <li class="border-b border-grey-500 hover:bg-gray-100"><a href="#" class="block p-4">Sign in</a></li>
+		        <li class="sign-up py-3"><a href="#" class="text-white hover:text-gray-300 font-semibold">Sign up</a></li>
+		    </ul>
+		</div>
+		<section class="main-banner relative">
+			<div class="container">
+				<div class="row banner-sec lg:flex gap-8 xl:gap-12 items-center justify-center">
+					<div class="banner-content lg:w-[509px] lg:py-[120px] animate-on-scroll sm:w-[550px] w-full m-auto lg:m-0" data-animate="fadeInRight">
+						<h1 class="lg:text-left text-center">Increase your website traffic with Martex</h1>
+						<p class="text-white lg:text-left text-center lg:w-[460px] lg:pt-8 md:pt-5 pt-3 pb-5 main-pregraph">Mauris donec turpis suscipit sapien ociis sagittis sapien tempor a volute ligula and aliquet tortor</p>
+						<div class="price sm:flex gap-6 lg:justify-start justify-center">
+							<div class="sm:flex gap-3 items-center text-center"><span><b>3</b>x</span><p class="text-white sm:text-left">Tempor sapien and quaerat placerat</p></div>
+							<div class="sm:flex gap-3 items-center text-center"><span><b>29</b>%</span><p class="text-white sm:text-left">Ligula suscipit vitae and rutrum turpis</p></div>
+						</div>
+					</div>
+					<div class="banner-right-img lg:w-1/2">
+						<img src="images/banner-right.png" class="lg:h-[725px] lg:absolute bottom-0 lg:mt-0 mt-10 lg:top-[158px] object-contain animate-on-scroll" data-animate="fadeInLeft">
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="Endless-Possibilities lg:pt-[60px] lg:pb-7">
+			<div class="container">
+				<div class="row">
+					<div class="text-center mb-10">
+						<h4 class="lg:pb-8 md:pb-5 pb-3">ENDLESS POSSIBILITIES</h4>
+						<h2 class="sm-w-full sm:w-[520px] lg:w-[740px] m-auto md:pb-4 pb-2">Digital marketing that drives results for your business</h2>
+						<p class="Ligula-risus lg:pb-8 md:pb-4">Ligula risus auctor tempus magna feugiat lacinia.</p>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 mb-5 md:mb-7 lg:mb-10 md:gap-7 gap-5 justify-center">
+						<div class="">
+							<div class="sm:flex sm:text-left text-center gap-2 animate-on-scroll" data-animate="fadeInUp">
+								<div class=""><img src="images/1.png"></div>
+								<div>
+									<h3 class="pb-2">Market Research</h3>
+									<p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+								</div>
+							</div>
+						</div>
+						<div class="">
+							<div class="sm:flex sm:text-left text-center gap-2 animate-on-scroll" data-animate="fadeInUp">
+								<div class=""><img src="images/2.png"></div>
+								<div>
+									<h3 class="pb-2">User Experience</h3>
+									<p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 mb-5 md:mb-7 lg:mb-10 md:gap-7 gap-5 justify-center">
+						<div class="">
+							<div class="sm:flex gap-2 sm:text-left text-center animate-on-scroll" data-animate="fadeInUp">
+								<div class=""><img src="images/3.png"></div>
+								<div>
+									<h3 class="pb-2">Digital Marketing</h3>
+									<p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+								</div>
+							</div>
+						</div>
+						<div class="">
+							<div class="sm:flex sm:text-left text-center gap-2 animate-on-scroll" data-animate="fadeInUp">
+								<div class=""><img src="images/4.png"></div>
+								<div>
+									<h3 class="pb-2">Web Development</h3>
+									<p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:mb-5 md:gap-7 gap-5 justify-center ">
+						<div class="">
+							<div class="sm:flex sm:text-left text-center gap-2 animate-on-scroll" data-animate="fadeInUp">
+								<div class=""><img src="images/5.png"></div>
+								<div>
+									<h3 class="pb-2">Brand Design Identity</h3>
+									<p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+								</div>
+							</div>
+						</div>
+						<div class="">
+							<div class="sm:flex gap-2 sm:text-left text-center animate-on-scroll" data-animate="fadeInUp">
+								<div class=""><img src="images/6.png"></div>
+								<div>
+									<h3 class="pb-2">SEO & SMM Services</h3>
+									<p>Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div class="container">
+				<div class="automate row md:flex gap-8 lg:gap-12 strategies rounded-[12px] justify-center items-center">
+					<div class="quality-traffic animate-on-scroll" data-animate="fadeInRight">
+						<h4 class="lg:pb-8 md:pb-4 pb-3">STRATEGIES THAT WORK</h4>
+						<h2>Quality traffic leads to quality customers!</h2>
+						<ul class="unorder-list md:mt-5 mt-3 pl-5 md:gap-4 gap-2">
+							<li>Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis sodales magna</li>
+							<li>Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam congue</li>
+						</ul>
+					</div>
+					<div class="md:mt-0 mt-10"><img src="images/right-img.png" class="image-width w-fulll h-full animate-on-scroll" data-animate="fadeInLeft"></div>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div class="container">
+				<div class="row md:flex lg:gap-12 gap-6 justify-center items-center">
+					<div class="md:w-1/2"><img src="images/first.png" class="image-width animate-on-scroll" data-animate="fadeInRight"></div>
+					<div class="md:w-1/2 animate-on-scroll" data-animate="fadeInLeft">
+						<h4 class="lg:pb-8 md:pb-4 pb-3">AUTOMATIC WORKFLOWS</h4>
+						<h2 class="md:pb-5 pb-2">Optimizing your website for success</h2>
+						<p>Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque auctor turpis vitae dolor luctus placerat magna and ligula cursus purus vitae purus an ipsum suscipit</p>
+						<h3 class="md:pt-5 pt-3">Get more done in less time</h3>
+						<ul class="unorder-list md:mt-5 mt-3 pl-5 md:gap-4 gap-2">
+							<li>Sapien quaerat tempor an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam undo congue cursus dolor</li>
+							<li>Purus suscipit cursus vitae cubilia magnis volute egestas vitae sapien turpis ultrice auctor congue magna placerat</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div class="container">
+				<div class="row text-center">
+					<div class="text-center lg:mb-[80px] md: mb-10">
+						<h2 class="lg:pb-4 pb-2">The Complete Solutions</h2>
+						<p class="Ligula-risus">Ligula risus auctor tempus magna feugiat lacinia.</p>
+					</div>
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-7 justify-center">
+						<div class="complete-solution p-7 pb-0 animate-on-scroll" data-animate="fadeInUp">
+							<img src="images/f1.png">
+							<h3 class="lg:pt-8 md:pt-5 pt-3 lg:pb-3 pb-2">Quick Integration</h3>
+							<p>Luctus egestas augue undo ultrice aliquam in lacus congue dapibus</p>
+						</div>
+						<div class="complete-solution p-7 pb-0 animate-on-scroll" data-animate="fadeInUp">
+							<img src="images/f2.png">
+							<h3 class="lg:pt-8 md:pt-5 pt-3 lg:pb-3 pb-2">Effortless Integration</h3>
+							<p>Tempor laoreet augue undo ultrice aliquam in lacusq luctus feugiat</p>
+						</div>
+						<div class="complete-solution p-7 pb-0 animate-on-scroll" data-animate="fadeInUp">
+							<img src="images/f3.png">
+							<h3 class="lg:pt-8 md:pt-5 pt-3 lg:pb-3 pb-2">Advanced Analytics</h3>
+							<p>Egestas luctus augue undo ultrice aliquam in lacus feugiat cursus</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="build-customer">
+			<div class="container">
+				<div class="row text-center Build-bg-gray lg:px-[75px] md:px-10 px-5 pt-5 md:pt-12 rounded-[12px] build-customer-centric ">
+					<div class="text-center build animate-on-scroll" data-animate="fadeInUp">
+						<h2 class="md:pb-4 pb-2">Build a customer-centric marketing strategy</h2>
+						<p class="">Aliquam a augue suscipit luctus neque purus ipsum neque diam dolor primis libero tempus, blandit and cursus varius and magnis sodales</p>
+					</div>
+					<div class="video-sec relative flex justify-center items-center animate-on-scroll" data-animate="fadeInUp">
+					    <img src="images/video-img1.png">
+					    <div class="absolute button-popup" alt="Click to play video" onclick="openVideoPopup()"><div class="you-tube-button md:max-w-[50px] max-w-[35px]"><svg height="150px" width="150px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <style type="text/css">  .st0{fill:#fff;}  </style> <g>
+					    <path class="st0" d="M207.063,167.141c-1.031-0.609-2.344-0.641-3.406-0.031c-1.031,0.594-1.688,1.719-1.688,2.938v85.938v85.953 c0,1.234,0.656,2.344,1.688,2.938c1.063,0.625,2.375,0.594,3.406-0.031l144-85.953c1.031-0.594,1.641-1.703,1.641-2.906 c0-1.172-0.609-2.297-1.641-2.891L207.063,167.141z"></path></g> </g></svg></div>
+					</div>
+					<!-- Popup Modal -->
+					<div class="video-popup" id="videoPopup">
+					    <div class="close-btn" onclick="closeVideoPopup()">×</div>
+					    <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Counter Section -->
+		<section class="counter-sec">
+			<div class="container mx-auto">
+			  	<div class="row flex lg:flex-nowrap flex-wrap gap-4 sm:justify-between justify-center sm:text-left text-center gap-y-5">
+			    	<!-- Counter Box 1 -->
+				    <div class="fadeInUp w-full">
+				      <div class="sm:flex gap-2 count-element-sec items-center">
+				        <h2 class="sm:m-0 m-auto text-4xl font-bold lg:w-[80px] w-[85px]"><span class="count-element" data-target="89">0</span>k</h2>
+				        <p class="text-gray-600 mt-2">Porta justo integer<br> and velna vitae auctor</p>
+				      </div>
+				    </div>
+				    <!-- Counter Box 2 -->
+				    <div class="fadeInUp w-full">
+				      <div class="sm:flex gap-2 count-element-sec items-center">
+				        <h2 class="sm:m-0 m-auto text-4xl font-bold lg:w-[90px] w-[95px]">
+				          <span class="count-element" data-target="76">0</span>%
+				        </h2>
+				        <p class="text-gray-600 mt-2">Ligula magna suscipit<br> vitae and rutrum</p>
+				      </div>
+				    </div>
+				    <!-- Counter Box 3 -->
+				    <div class="fadeInUp w-full">
+				      <div class="sm:flex gap-2 count-element-sec items-center">
+				        <h2 class="sm:m-0 m-auto text-4xl font-bold lg:w-[100px] w-[90px]">
+				          <span class="count-element" data-target="4.93">0</span>
+				        </h2>
+				        <p class="text-gray-600 mt-2">Sagittis congue augue<br> egestas an egestas</p>
+				      </div>
+				    </div>
+			  	</div>
+			</div>
+		</section>
+		<section class="ONE-STOOP relative">
+			<div class="container">
+				<div class="row lg:flex gap-12 justify-center items-center">
+					<div class="lg:w-[45%] animate-on-scroll" data-animate="fadeInRight">
+						<h4 class="lg:pb-8 md:pb-4 pb-3">ONE-STOOP SOLUTION</h4>
+						<h2>Smart solutions, real-time results</h2>
+						<p class="md:pt-8 pt-3">Sodales tempor sapien quaerat ipsum and congue undo laoreet turpis neque auctor turpis vitae dolor luctus placerat magna ligula and cursus vitae</p>
+						<ul class="unorder-list md:mt-5 mt-3 pl-5 md:gap-4 gap-2">
+							<li>Tempor sapien quaerat undo ipsum laoreet diam purus sapien a dolor ociis ultrice ipsum aliquam congue a dolor cursus congue varius magnis</li>
+						</ul>
+						<div class="flex items-center gap-2 md:mt-8 mt-6"><a href="#audience" class="btn">The smarter way to work</a><img src="images/arrow-button.png"></div>
+					</div>
+					<div class="lg:w-[55%] contemt-markiting animate-on-scroll md:mt-0 mt-10" data-animate="fadeInLeft">
+						<div class="sm:flex gap-6">
+							<div class="sm:text-left text-center bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] p-6">
+								<img src="images/7.png" alt="images" class="sm:m-0 m-auto">
+								<h3 class="py-2">Content Marketing</h3>
+								<p>Porta semper lacus and cursus feugiat at primis ultrice a ligula auctor</p>
+							</div>
+							<div class="sm:text-left text-center bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] p-6 sm:mt-0 mt-4">
+								<img src="images/8.png" alt="images" class="sm:m-0 m-auto">
+								<h3 class="py-2">Pay Per Click (PPC)</h3>
+								<p>Porta semper lacus and cursus feugiat at primis ultrice a ligula auctor</p>
+							</div>
+						</div>
+						<div class="sm:flex gap-6 mt-6">
+							<div class="sm:text-left text-center bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] p-6">
+								<img src="images/9.png" alt="images" class="sm:m-0 m-auto">
+								<h3 class="py-2">Video Marketing</h3>
+								<p>Porta semper lacus and cursus feugiat at primis ultrice a ligula auctor</p>
+							</div>
+							<div class="sm:text-left text-center bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] p-6 sm:mt-0 mt-4">
+								<img src="images/10.png" alt="images" class="sm:m-0 m-auto">
+								<h3 class="py-2">Business Analytics</h3>
+								<p>Porta semper lacus and cursus feugiat at primis ultrice a ligula auctor</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div class="container">
+				<div class="row md:flex gap-12 justify-center items-center">
+					<div class="md:w-1/2"><img src="images/second.png" class="image-width animate-on-scroll" data-animate="fadeInRight"></div>
+					<div class="md:w-1/2 animate-on-scroll md:mt-0 mt-10" data-animate="fadeInLeft">
+						<h4 class="lg:pb-8 md:pb-4 pb-3">RESEARCH SOLUTIONS</h4>
+						<h2 class="md:pb-5 pb-2">Engage your most valuable visitors</h2>
+						<p>Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque auctor turpis vitae dolor luctus placerat magna and ligula cursus purus vitae purus an ipsum suscipit</p>
+						<ul class="unorder-list md:mt-5 mt-3 pl-5 md:gap-4 gap-2">
+							<li>Sapien quaerat tempor an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam undo congue cursus dolor</li>
+							<li class="">Purus suscipit cursus vitae cubilia magnis volute egestas vitae sapien turpis ultrice auctor congue magna placerat</li>
+						</ul>
+						<div class="flex items-center gap-2 md:mt-8 mt-6"><a href="#Automate-workflow" class="btn">All-in-one platform </a><img src="images/arrow-button.png"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="Enhanced-Security relative lg:py-[100px] py-[60px] lg:overflow-hidden">
+			<div class="container">
+				<div class="row lg:flex gap-12 justify-center">
+					<div class="lg:w-1/2 lg:py-[130px] animate-on-scroll" data-animate="fadeInRight">
+						<div class="flex sm:gap-7 gap-3 circle-blue">
+							<div class="circle-changer"><h6>1</h6></div>
+							<div class="">
+								<h3 class="lg:pb-4 pb-2">Enhanced Security Features</h3>
+								<p class="relative border-left">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</p>
+							</div>
+						</div>
+						<div class="flex sm:gap-7 gap-3 lg:mt-10 mt-7 circle-blue">
+							<div class="circle-changer"><h6>2</h6></div>
+							<div class="">
+								<h3 class="lg:pb-4 pb-2">No Personal Data Collected</h3>
+								<p class="relative border-left">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</p>
+							</div>
+						</div>
+						<div class="flex sm:gap-7 gap-3 lg:mt-10 mt-7 circle-blue">
+							<div class="circle-changer"><h6>3</h6></div>
+							<div class="">
+								<h3 class="lg:pb-4 pb-2">Weekly Email Reports</h3>
+								<p class="relative border-left">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</p>
+							</div>
+						</div>
+					</div>
+					<div class="lg:w-1/2 lg:mt-0 mt-12"><img src="images/right-half-.png" class="lg:absolute object-contain animate-on-scroll" data-animate="fadeInLeft"></div>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div class="container">
+				<div class="row md:flex lg:gap-12 gap-5 justify-center items-center animate-on-scroll" data-animate="fadeInRight">
+					<div class="md:w-1/2"><img src="images/apps.png" class="image-width"></div>
+					<div class="md:w-1/2 md:mt-0 mt-10">
+						<h4 class="lg:pb-8 pb-4">EASY INTEGRATION</h4>
+						<h2 class="pb-5">Plug your essential tools in few clicks</h2>
+						<ul class="unorder-list pl-5">
+							<li>Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis sodales magna undo aoreet primis</li>
+							<li class="pt-2">Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam undo congue dolor cursus purus congue and ipsum purus sapien a blandit</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="reach-audience" id="audience">
+			<div class="container">
+				<div class="row text-center">
+					<div class="reach text-center md:w-[600px] lg:w-[800px] m-auto lg:mb-[70px] mb-12">
+						<h2 class="lg:pb-6 pb-5">Reach your audience through social media marketing</h2>
+						<p class="Ligula-risus">Ligula risus auctor tempus magna feugiat lacinia.</p>
+					</div>
+					<div class="sm:flex gap-5 lg:gap-10 justify-center">
+						<div class="gray-box2 animate-on-scroll" data-animate="fadeInUp">
+							<h3 class="md::pb-4 pb-2">Data Integrations</h3>
+							<p>Aliquam a augue suscipit luctus diam neque purus ipsum neque and dolor primis libero</p>
+							<img src="images/f6.png" class="lg:pt-10 sm:pt-6 pt-5">
+						</div>
+						<div class="gray-box2 animate-on-scroll sm:mt-0 mt-4" data-animate="fadeInUp">
+							<img src="images/f7.png">
+							<h3 class="lg:pt-10 sm:pt-6 pt-5 md::pb-4 pb-2">Research Solutions</h3>
+							<p>Aliquam a augue suscipit luctus diam neque purus ipsum neque and dolor primis libero</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="reviews-sec">
+			<div class="container">
+				<div class="row">
+					<div class="text-center mb-7 lg:mb-[80px]">
+						<h2>Our Happy Customers</h2>
+						<p class="Ligula-risus lg:pt-5 md:3 pt-2">Ligula risus auctor tempus magna feugiat lacinia.</p>
+					</div>
+					<div class="sm:flex gap-6 lg:gap-10 justify-center">
+						<div class="bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-12 p-5">
+							<p>Quaerat sodales sapien euismod blandit aliquet ipsum primis undo and cubilia laoreet augue and luctus magna dolor luctus egestas sapien vitae</p>
+							<div class="flex mt-5 items-center gap-2">
+								<img src="images/rev1.png" class="">
+								<div class="">
+									<h3 class="author">Scott Boxer</h3>
+									<p>@scott_boxer</p>
+								</div>
+							</div>
+						</div>
+						<div class="bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-10 p-5 sm:mt-0 mt-4">
+							<p>Quaerat sodales sapien euismod blandit aliquet ipsum primis undo and cubilia laoreet augue and luctus magna dolor luctus egestas sapien vitae</p>
+							<div class="flex mt-5 items-center gap-2">
+								<img src="images/rev2.png" class="">
+								<div class="author">
+									<h3 class="">Scott Boxer</h3>
+									<p>@scott_boxer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sm:flex lg:gap-10 gap-6 lg:mt-10 mt-5  justify-center">
+						<div class="bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-10 p-5">
+							<p>Quaerat sodales sapien euismod blandit aliquet ipsum primis undo and cubilia laoreet augue and luctus magna dolor luctus egestas sapien vitae</p>
+							<div class="flex mt-5 items-center gap-2">
+								<img src="images/rev3.png" class="">
+								<div class="author">
+									<h3 class="">Scott Boxer</h3>
+									<p>@scott_boxer</p>
+								</div>
+							</div>
+						</div>
+						<div class="bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-10 p-5 sm:mt-0 mt-4">
+							<p>Quaerat sodales sapien euismod blandit aliquet ipsum primis undo and cubilia laoreet augue and luctus magna dolor luctus egestas sapien vitae</p>
+							<div class="flex mt-5 items-center gap-2">
+								<img src="images/rev4.png" class="">
+								<div class="author">
+									<h3 class="">Scott Boxer</h3>
+									<p>@scott_boxer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="slider-sec">
+			<div class="container">
+				<h4 class="lg:mb-12 md:mb-10 mb-6 text-center">Trusted and used by over 3,400 companies</h4>
+				<div class="row flex justify-between owl-carousel owl-theme">
+					<div class="item">
+						<img src="images/brand-1.png">
+					</div>
+					<div class="item">
+						<img src="images/brand-2.png">
+					</div>
+					<div class="item">
+						<img src="images/brand-3.png">
+					</div>
+					<div class="item">
+						<img src="images/brand-4.png">
+					</div>
+					<div class="item">
+						<img src="images/brand-5.png">
+					</div>
+					<div class="item">
+						<img src="images/brand-1.png">
+					</div>
+					<div class="item">
+						<img src="images/brand-2.png">
+					</div>
+					<div class="item">
+						<img src="images/brand-3.png">
+					</div>
+					<div class="item">
+						<img src="images/brand-4.png">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="Automate-workflow" id="Automate-workflow">
+			<div class="container">
+				<div class="row  rounded-[12px]">
+					<div class="text-center mb-12 Automate md:w-[500px] lg:w-[700px] m-auto">
+						<h2 class="lg:pb-5 md:pb-4 pb-3">Automate your workflow with our integrations</h2>
+						<p class="Ligula-risus">Ligula risus auctor tempus magna feugiat lacinia.</p>
+					</div>
+					<div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 justify-between sm:w-full w-[fit-content] m-auto">
+						<div class="text-center">
+							<div class="lg:mb-5 sm:mb-3 mb-2 tools bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-10 p-7"><img src="images/tool-1.png" class="m-auto"></div>
+							<h3>Zapier</h3>
+						</div>
+						<div class="text-center">
+							<div class="lg:mb-5 sm:mb-3 mb-2 tools bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-12 p-7"><img src="images/tool-2.png" class="m-auto"></div>
+							<h3>Google Analytics</h3>
+						</div>
+						<div class="text-center">
+							<div class="lg:mb-5 sm:mb-3 mb-2 tools bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-12 p-7"><img src="images/tool-3.png" class="m-auto"></div>
+							<h3>Amplitude</h3>
+						</div>
+						<div class="text-center">
+							<div class="lg:mb-5 sm:mb-3 mb-2 tools bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-12 p-7"><img src="images/tool-4.png" class="m-auto"></div>
+							<h3>Hubspot</h3>
+						</div>
+						<div class="text-center">
+							<div class="lg:mb-5 sm:mb-3 mb-2 tools bg-white shadow-[0px_4px_10px_rgba(0,0,0,0.15)] rounded-[12px] lg:p-12 p-7"><img src="images/tool-5.png" class="m-auto"></div>
+							<h3>MailChimp</h3>
+						</div>
+					</div>
+					<div class="btn-intigration text-center">
+						<a href="#" class="sm:py-3 py-2 md:px-11 px-8 lg:mt-[60px] mt-5 block w-[fit-content] m-auto">View all Integrations</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div class="container">
+				<div class="automate row md:flex lg:gap-12 gap-6 justify-center items-center">
+					<div class="md:w-1/2 animate-on-scroll" data-animate="fadeInRight">
+						<h4 class="lg:pb-8 pb-4">EASY ONBOARDING</h4>
+						<h2 class="pb-5">Achieve more with better workflows</h2>
+						<p>Nemo ipsam egestas volute turpis egestas ipsum and purus sapien ultrice an aliquam quaerat ipsum augue turpis sapien cursus congue magna purus quaerat at ligula purus egestas magna cursus undo varius purus magnis sapien quaerat</p>
+						<h3 class="pt-5">Get more done in less time</h3>
+						<ul class="unorder-list md:mt-5 mt-3 pl-5 md:gap-4 gap-2">
+							<li>Sapien quaerat tempor an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam undo congue cursus dolor</li>
+							<li>Purus suscipit cursus vitae cubilia magnis volute egestas vitae sapien turpis ultrice auctor congue magna placerat</li>
+						</ul>
+					</div>
+					<div class="md:w-1/2"><img src="images/threetype.png" class="image-width animate-on-scroll" data-animate="fadeInLeft"></div>
+				</div>
+			</div>
+		</section>
+		<section class="Analytics-Review-sec">
+			<div class="container">
+				<div class="row md:flex lg:gap-12 gap-6 justify-center items-center">
+					<div class="md:w-1/2"><img src="images/person.png" class="image-width animate-on-scroll" data-animate="fadeInRight"></div>
+					<div class="md:w-1/2 animate-on-scroll" data-animate="fadeInLeft">
+						<h3>Advanced Analytics Review</h3>
+						<p>Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque auctor turpis vitae dolor luctus placerat magna and ligula cursus purus vitae purus an ipsum suscipit</p>
+						<h3 class="py-5">Email Marketing Campaigns</h3>
+						<p>Tempor sapien sodales quaerat ipsum undo congue laoreet turpis neque auctor turpis vitae dolor luctus placerat magna and ligula cursus purus an ipsum vitae suscipit purus</p>
+						<ul class="unorder-list md:mt-5 mt-3 pl-5 md:gap-4 gap-2">
+							<li>Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam undo congue dolor cursus</li>
+							<li>Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis ultrice auctor congue magna placerat</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="">
+			<div class="container">
+				<div class="row">
+					<div class="text-center lg:mb-[70px] md:mb-[40px] mb-7">
+						<h2 class="lg:pb-5 md:pb-3 pb-2">Questions & Answers</h2>
+						<p class="Ligula-risus">Ligula risus auctor tempus magna feugiat lacinia.</p>
+					</div>
+					<div class="sm:flex mb-5 lg:gap-10 gap-6 justify-center">
+						<div class="">
+							<div class="animate-on-scroll" data-animate="fadeInUp">
+								<h3 class="lg:pb-5 pb-3">1. Getting started with Martex</h3>
+								<p>Etiam amet mauris suscipit in odio integer congue metus and vitae arcu mollis blandit ultrice ligula egestas magna suscipit lectus magna suscipit luctus blandit and laoreet</p>
+							</div>
+							<div class="lg:mt-10 mt-6 animate-on-scroll" data-animate="fadeInUp">
+								<h3 class="lg:pb-5 pb-3">2. What's inside the package?</h3>
+								<p>An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
+							</div>
+							<div class="lg:mt-10 mt-6 animate-on-scroll" data-animate="fadeInUp">
+								<h3 class="lg:pb-5 pb-3">3. How do I choose a plan?</h3>
+								<ul class="unorder-list pl-5 md:gap-4 gap-2">
+									<li>Fringilla risus, luctus mauris orci auctor purus ligula euismod pretium purus pretium rutrum tempor sapien</li>
+									<li>Nemo ipsam egestas volute undo turpis purus lipsum primis aliquam sapien quaerat sodales pretium a purus</li>
+								</ul>
+							</div>
+						</div>
+						<div class="">
+							<div class=" animate-on-scroll sm:mt-0 mt-6" data-animate="fadeInUp">
+								<h3 class="lg:pb-5 pb-3">4. How does Martex handle my privacy?</h3>
+								<p>Quaerat sodales sapien euismod blandit purus a purus ipsum primis in cubilia laoreet augue luctus dolor luctus</p><p class="lg:pt-4 pt-2">An enim nullam tempor sapien gravida donec congue metus. Vitae arcu mollis blandit integer nemo volute velna</p>
+							</div>
+							<div class="lg:mt-10 mt-6 animate-on-scroll" data-animate="fadeInUp">
+								<h3 class="lg:pb-5 pb-3">5. I have an issue with my account</h3>
+								<p>Cubilia laoreet augue egestas and luctus donec curabite diam vitae dapibus libero and quisque gravida donec neque blandit justo aliquam molestie nunc sapien justo</p>					
+							</div>
+							<div class="lg:mt-10 mt-6 animate-on-scroll" data-animate="fadeInUp">
+								<h3 class="lg:pb-5 pb-3">6. Can I cancel at anytime?</h3>
+								<p>An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
+							</div>
+						</div>
+					</div>
+					<div class="get-in-touch-btn text-center lg:mt-[80px] md:mt-[60px] mt-10"><a href="">Have any questions? <span class="get">Get in Touch</span></a></div>
+				</div>
+			</div>
+		</section>
+		<section class="rotate-img-sec">
+			<div class="container">
+				<div class="row md:flex rounded-[12px] relative items-center justify-center overflow-hidden md:p-0 p-5">
+					<div class="getting-started-content">
+						<h2 class="text-white">Getting started with Martex today!</h2>
+						<p class="text-white lg:pt-7 pt-3">Congue laoreet turpis neque auctor turpis vitae dolor a luctus placerat and magna ligula cursus</p> 
+						<div class="get-started-btn lg:mt-10 mt-8 lg:mb-0 mb-5"><a href="" class="py-2 px-7">Get started - it's free</a></div>
+					</div>
+					<div class="md:mt-0 mt-12"><img src="images/rotate.png" class="image-width get-img relative"></div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row justify-between sm:pb-12 pb-7 border-b flex flex-wrap gap-y-5">
+					<div class="sm:mb-0 mb-4 lg:w-1/5 w-full">
+						<img src="images/logo-skyblue.png" class="w-full max-w-[150px]">
+					</div>
+					<div class="lg:w-1/5 md:w-1/4 sm:w-1/3 w-1/2">
+						<ul>
+							<h5 class="lg:pb-5 pb-4">Company</h5>
+							<li><a href="">About Us</a></li>
+							<li><a href="">Our Blog</a></li>
+							<li><a href="">Customers</a></li>
+							<li><a href="">Community</a></li>
+						</ul>
+					</div>
+					<div class="lg:w-1/5 md:w-1/4 sm:w-1/3 w-1/2">
+						<ul>
+							<h5 class="lg:pb-5 pb-4">Product</h5>
+							<li><a href="">Integration</a></li>
+							<li><a href="">What's New</a></li>
+							<li><a href="">Pricing</a></li>
+							<li><a href="">Help Center</a></li>
+						</ul>
+					</div>
+					<div class="lg:w-1/5 md:w-1/4 sm:w-1/3 w-1/2">
+						<ul>
+							<h5 class="lg:pb-5 pb-4">Legal</h5>
+							<li><a href="">Terms of Use</a></li>
+							<li><a href="">Privacy Policy</a></li>
+							<li><a href="">Cookie Policy</a></li>
+							<li><a href="">Site Map</a></li>
+						</ul>
+					</div>
+					<div class="lg:w-1/5 md:w-1/4 sm:w-1/3 w-full">
+						<div class="">
+							<h5 class="lg:pb-5 pb-4">Follow the Best</h5>
+							<button class="follow-btn flex items-center gap-3 p-3 lg:w-[200px] w-[175px] justify-between rounded"><a href="">Email Address</a><img src="images/arrow.png"></button>
+						</div>
+					</div>
+				</div>
+				<div class="copyright sm:flex justify-between sm:py-12 py-7">
+					<p>© 2025 Martex. All Rights Reserved</p>
+					<ul class="flex gap-5">
+						<li><a href=""><img src="images/facebook2.png"></a></li>
+						<li><a href=""><img src="images/twiter.png"></a></li>
+						<li><a href=""><img src="images/instagram.png"></a></li>
+						<li><a href=""><img src="images/youtup.png"></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<!-- ------------------------------------------------------------------------------------------------------- -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/custom.js"></script>	
+	</body>
+</html>
